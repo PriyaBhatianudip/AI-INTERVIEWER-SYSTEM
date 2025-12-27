@@ -1,28 +1,29 @@
 package com.ai.interviewer.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
+import java.util.List;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
-public class Question 
-{
-	@Id
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Question {
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 1000)
     private String questionText;
-    private String category; // Java, AI, DBMS etc.
+
+    @Column(length = 2000)
+    private String idealAnswer;
+
+    @ElementCollection
+    private List<String> keyPoints;
+
+    private String jobRole;
+    private String difficulty; // EASY / MEDIUM / HARD
 }

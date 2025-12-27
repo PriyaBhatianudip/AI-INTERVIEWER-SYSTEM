@@ -1,32 +1,42 @@
 package com.ai.interviewer.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
+import java.util.List;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
-public class Answer 
-{
-	@Id
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Answer {
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long interviewId;
     private Long questionId;
+
+    @Column(length = 2000)
     private String answerText;
 
-    // AI scores later
-    private Double score;
+    // ---- AI SCORES ----
+    private Double accuracyScore;
+    private Double relevanceScore;
+    private Double communicationScore;
+    private Double overallScore;
+
+    private String sentiment;
+    private String confidence;
+
+    // ---- AI FEEDBACK ----
+    @ElementCollection
+    private List<String> strengths;
+
+    @ElementCollection
+    private List<String> weaknesses;
+
+    @ElementCollection
+    private List<String> improvementTips;
 }
