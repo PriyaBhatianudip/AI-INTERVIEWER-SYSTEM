@@ -9,6 +9,8 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
+@Table(name="interviews")
 public class Interview {
 
     @Id

@@ -1,21 +1,40 @@
 package com.ai.interviewer.dto;
 
+import java.util.List;
+import jakarta.validation.constraints.*;
 
-import java.time.LocalDateTime;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class SubmitAnswerRequest {
 
-    private Long userId;
-    private Long interviewId;
+    @JsonProperty("candidate_id")
+    @NotNull
+    private Long candidateId;
+
+    @JsonProperty("interview_session_id")
+    private Long interviewSessionId;
+
+    @JsonProperty("question_id")
     private Long questionId;
+
+    @JsonProperty("job_role")
+    private String jobRole;
+
+    @JsonProperty("question_text")
+    private String questionText;
+
+    @JsonProperty("ideal_answer")
+    private String idealAnswer;
+
+    @JsonProperty("key_points")
+    private List<String> keyPoints;
+
+    @JsonProperty("candidate_answer")
     private String candidateAnswer;
-}
+}	
