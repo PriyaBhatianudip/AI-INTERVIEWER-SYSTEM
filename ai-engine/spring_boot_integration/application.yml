@@ -1,0 +1,14 @@
+ai:
+  service:
+    base-url: http://localhost:8000
+    endpoints:
+      stt: /stt
+      evaluate: /evaluate-answer
+      summary: /summary
+      adaptive: /adaptive-next
+
+# Optional: Configure timeouts
+spring:
+  mvc:
+    async:
+      request-timeout: 60000
