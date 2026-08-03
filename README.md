@@ -1,20 +1,63 @@
-# AI-Powered Automated Interviewer System
+AI Interviewer System
+Overview
 
-This project is an AI-based interview platform that conducts mock interviews,
-evaluates candidate responses using NLP techniques, and provides structured
-feedback and performance reports.
+AI Interviewer System is a full-stack web application that simulates technical interviews using Artificial Intelligence. The platform enables candidates to participate in mock interviews while allowing administrators to manage questions, monitor interviews, and analyze candidate performance.
 
-## Architecture
-React Frontend → Spring Boot Backend → Python AI Engine → MySQL
+Features
+Candidate Module
+User Registration
+Login Authentication
+Dashboard
+AI Interview Session
+Voice Answer Submission
+Interview Summary
+Performance Report
+Progress Tracking
+Admin Module
+Admin Dashboard
+Question Management
+Bulk Upload Questions
+Interview Reports
+Candidate Reports
+Analytics
+AI Engine
+AI Question Generation
+Answer Evaluation
+Interview Summary
+Resume/JD Comparison
+Adaptive Question Generation
+Progress Analysis
+Technology Stack
+Frontend
+React
+Vite
+Tailwind CSS
+Axios
+React Router
+Backend
+Java 21
+Spring Boot
+Spring Security
+Spring Data JPA
+MySQL
+AI Engine
+Python
+FastAPI
+LangChain
+OpenAI / Gemini API
+REST APIs
+Database
 
-## Tech Stack
-- Frontend: React
-- Backend: Spring Boot (Java)
-- AI Engine: Python (NLP)
-- Database: MySQL
+MySQL
 
-## Project Structure
-/frontend   - User Interface  
-/backend    - Application Logic  
-/ai-engine  - AI Evaluation Service  
-/docs       - Diagrams & Documentation
+Project Architecture
+React Frontend
+       │
+       ▼
+Spring Boot Backend
+       │
+       ▼
+Python FastAPI AI Engine
+       │
+       ▼
+OpenAI / Gemini
